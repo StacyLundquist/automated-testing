@@ -1,4 +1,3 @@
-
 # card.rb
 
 class Card
@@ -28,6 +27,6 @@ class Card
       return "King of #{suit.to_s.capitalize}"
     end
   end
-
-
 end
+
+

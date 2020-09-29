@@ -13,8 +13,6 @@ describe Card do
     end
 
     it 'Raises an ArgumentError for invalid parameters' do
-      # To raise an ArgumentError in card.rb
-      # raise ArgumentError.new
       expect {Card.new(0, :diamonds)}.must_raise ArgumentError
       expect {Card.new(14, :diamonds)}.must_raise ArgumentError
       expect {Card.new(14, :clovers)}.must_raise ArgumentError
@@ -49,12 +47,26 @@ describe Card do
   describe 'Reader methods' do
 
     it 'Can retrieve the value of the card using a `.value`.' do
-      # ensure that `.value works as expected`
+      card = Card.new(2, :diamonds)
+      card2 = Card.new(10, :spades)
+      card3 = Card.new(5, :hearts)
+
+      expect(card.value).must_equal 2
+      expect(card2.value).must_equal 10
+      expect(card3.value).must_equal 5
     end
 
     it 'Can retrieve the value of the card using a `.suit`.' do
-      # ensure that `.suit works as expected returning the symbol of the suit`
+      #did you mean retrieve the suit of the card using suit?
+      card = Card.new(1, :diamonds)
+      card2 = Card.new(11, :spades)
+      card3 = Card.new(12, :hearts)
+      card4 = Card.new(13, :clubs)
 
+      expect(card.suit.to_s).must_equal 'diamonds'
+      expect(card2.suit.to_s).must_equal 'spades'
+      expect(card3.suit.to_s).must_equal 'hearts'
+      expect(card4.suit.to_s).must_equal 'clubs'
     end
   end
 
